@@ -50,6 +50,7 @@ public class game4 extends javax.swing.JFrame {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
         
+        
     }//GEN-LAST:event_formKeyPressed
 
     /**
