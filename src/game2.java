@@ -1,4 +1,5 @@
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /*
@@ -18,6 +19,8 @@ public class game2 extends javax.swing.JFrame {
      */
     public game2() {
         initComponents();
+        //getContentPane().add(jLabel2);
+        //jLabel2.setBounds(0, 0, 500, 500);
     }
 
     /**
@@ -34,6 +37,7 @@ public class game2 extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -48,10 +52,26 @@ public class game2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/cartoon1.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jLabel2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel2KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jLabel2KeyReleased(evt);
+            }
+        });
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/bgpuzzle.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/bg2.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        jButton1.setText("jButton1");
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         jMenu3.setText("Menu");
 
@@ -78,6 +98,45 @@ public class game2 extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel2KeyPressed
+        // TODO add your handling code here:
+        /*if(evt.getKeyCode() == evt.VK_W){
+            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 5, 0, 0);
+        }*/
+    }//GEN-LAST:event_jLabel2KeyPressed
+
+    private void jLabel2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2KeyReleased
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
+
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
+
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
+
+        }
+        if ((jLabel2.getBounds().y <= 0)) {
+            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+        } else if ((jLabel2.getBounds().y >= 450)) {
+            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
+        } else if ((jLabel2.getBounds().x <= 0)) {
+            jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
+        }else if ((jLabel2.getBounds().x >= 500)) {
+            jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
+        }
+    }//GEN-LAST:event_jButton1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -112,9 +171,11 @@ public class game2 extends javax.swing.JFrame {
                 new game2().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
