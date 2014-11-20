@@ -1,4 +1,5 @@
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 /*
@@ -11,21 +12,30 @@ import java.util.ArrayList;
  *
  * @author Administrator
  */
-public class check {
-    
+public class check  {
+    ArrayList<check> position = new ArrayList<>();
+    Point p = new Point();
     public  check(){
         //constructor
-    }
-    public void checkhit(){
-        ArrayList<check> position = new ArrayList<>();
-        for(int i=0;i<140;i++){
-        contains(i,55);
         
     }
+    public Point pp(int x,int y){
+        for(int i=0;i<144;i++){
+            p = pp(i,55);
+        }
+        return p;
+    }
+    public  void  checkHit(Point p){
+       
+        position.add(this);
+        
+    }
+     
+
+   
+   
     }
 
-    private void contains(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
     
-}
+

@@ -113,13 +113,16 @@ public class game2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         //jLabel2.setBounds(0, 0, 50, 50);
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
 
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            if(getBounds().y == 55){
-                    jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
-            }
+             if(jLabel2.getX()>144 &&jLabel2.getY()!=55){
+             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+             }
+            
+
         }
         if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
@@ -140,7 +143,6 @@ public class game2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1KeyPressed
 
-    
     /**
      * @param args the command line arguments
      */
