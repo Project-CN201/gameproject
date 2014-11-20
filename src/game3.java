@@ -101,13 +101,13 @@ public class game3 extends javax.swing.JFrame {
             jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
 
         }
-        if ((jLabel2.getBounds().y <= 0)) {
+        if ((jLabel2.getBounds().y <= -5)) {
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
-        } else if ((jLabel2.getBounds().y >= 450)) {
+        } else if ((jLabel2.getBounds().y >= 460)) {
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
-        } else if ((jLabel2.getBounds().x <= 0)) {
+        } else if ((jLabel2.getBounds().x <= -1)) {
             jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
-        }else if ((jLabel2.getBounds().x >= 500)) {
+        }else if ((jLabel2.getBounds().x >= 465)) {
             jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
         }
     }//GEN-LAST:event_jButton1KeyPressed

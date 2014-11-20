@@ -1,5 +1,9 @@
 
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 /*
@@ -7,7 +11,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Administrator
@@ -19,8 +22,6 @@ public class game2 extends javax.swing.JFrame {
      */
     public game2() {
         initComponents();
-        //getContentPane().add(jLabel2);
-        //jLabel2.setBounds(0, 0, 500, 500);
     }
 
     /**
@@ -93,7 +94,7 @@ public class game2 extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-         int option = JOptionPane.showConfirmDialog(this, "Do you want to exit?");
+        int option = JOptionPane.showConfirmDialog(this, "Do you want to exit?");
         if (option == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
@@ -101,9 +102,7 @@ public class game2 extends javax.swing.JFrame {
 
     private void jLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel2KeyPressed
         // TODO add your handling code here:
-        /*if(evt.getKeyCode() == evt.VK_W){
-            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 5, 0, 0);
-        }*/
+
     }//GEN-LAST:event_jLabel2KeyPressed
 
     private void jLabel2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel2KeyReleased
@@ -112,12 +111,15 @@ public class game2 extends javax.swing.JFrame {
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
         // TODO add your handling code here:
+        //jLabel2.setBounds(0, 0, 50, 50);
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
 
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+            if(getBounds().y == 55){
+                    jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+            }
         }
         if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
@@ -127,17 +129,18 @@ public class game2 extends javax.swing.JFrame {
             jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
 
         }
-        if ((jLabel2.getBounds().y <= 0)) {
+        if ((jLabel2.getBounds().y <= -5)) {
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
-        } else if ((jLabel2.getBounds().y >= 450)) {
+        } else if ((jLabel2.getBounds().y >= 460)) {
             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
-        } else if ((jLabel2.getBounds().x <= 0)) {
+        } else if ((jLabel2.getBounds().x <= -1)) {
             jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
-        }else if ((jLabel2.getBounds().x >= 500)) {
+        } else if ((jLabel2.getBounds().x >= 465)) {
             jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
         }
     }//GEN-LAST:event_jButton1KeyPressed
 
+    
     /**
      * @param args the command line arguments
      */

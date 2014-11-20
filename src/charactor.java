@@ -31,6 +31,8 @@ public class charactor extends javax.swing.JFrame {
 
         VJAYDA = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -60,6 +62,15 @@ public class charactor extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 200, 110));
+
+        jTextPane1.setBackground(new java.awt.Color(204, 255, 204));
+        jTextPane1.setFont(new java.awt.Font("Papyrus", 1, 28)); // NOI18N
+        jTextPane1.setForeground(new java.awt.Color(102, 0, 102));
+        jTextPane1.setText(" Please choose the charactor.");
+        jTextPane1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 420, 60));
 
         jMenu1.setText("Menu");
 
@@ -143,5 +154,7 @@ public class charactor extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
