@@ -118,9 +118,9 @@ public class game2 extends javax.swing.JFrame {
 
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-             if(jLabel2.getX()>144 &&jLabel2.getY()!=55){
+             if((jLabel2.getX()>144 ||jLabel2.getX()+jLabel2.getWidth()<0)|| jLabel2.getY()+50>55){
              jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
-             }
+            }
             
 
         }
