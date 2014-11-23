@@ -1,9 +1,7 @@
 
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.awt.geom.Area;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /*
@@ -16,14 +14,32 @@ import javax.swing.JOptionPane;
  * @author Administrator
  */
 public class game2 extends javax.swing.JFrame {
-
+    private static final int movepixel = 10;
+    private static JLabel[] wall = new JLabel[18];
     /**
      * Creates new form game2
      */
     public game2() {
         initComponents();
-    }
-
+        wall[0] = jLabel3;
+        wall[1] = jLabel4;
+        wall[2] = jLabel6;
+        wall[3] = jLabel7;
+        wall[4] = jLabel9;
+        wall[5] = jLabel10;
+        wall[6] = jLabel11;
+        wall[7] = jLabel12;
+        wall[8] = jLabel13;
+        wall[9] = jLabel14;
+        wall[10] = jLabel16;
+        wall[11] = jLabel19;
+        wall[12] = jLabel20;
+        wall[13] = jLabel22;
+        wall[14] = jLabel23;
+        wall[15] = jLabel24;
+        wall[16] = jLabel28;
+        wall[17] = jLabel29;
+    }  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,8 +53,35 @@ public class game2 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -61,10 +104,18 @@ public class game2 extends javax.swing.JFrame {
                 jLabel2KeyReleased(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/bg2.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 20, 110));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, 20));
+
+        jLabel5.setToolTipText("");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 40, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 10));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 230, 10));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 60, 10));
 
         jButton1.setText("jButton1");
         jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -72,7 +123,31 @@ public class game2 extends javax.swing.JFrame {
                 jButton1KeyPressed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 100, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 20, 110));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 80, 20));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 20, 90));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 20, 120));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 20, 150));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 0, 150));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 20, 80));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 90, -1));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 180, -1));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 170, 10));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 20, 90));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 110, -1));
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 426, 20, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/bg2.jpg"))); // NOI18N
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 20, 60));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 10, 150));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 90, -1));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 90, -1));
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 100, -1));
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 90, 20));
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 100, 20));
 
         jMenu3.setText("Menu");
 
@@ -91,12 +166,12 @@ public class game2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         int option = JOptionPane.showConfirmDialog(this, "Do you want to exit?");
         if (option == JOptionPane.YES_OPTION) {
-            System.exit(0);
+            System.exit(0); 
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -112,37 +187,67 @@ public class game2 extends javax.swing.JFrame {
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
         // TODO add your handling code here:
         //jLabel2.setBounds(0, 0, 50, 50);
-        if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            
-            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
 
+        int currentX = jLabel2.getBounds().x;
+        int currentY = jLabel2.getBounds().y;
+        
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+//            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - movepixel, 50, 50);
+            jLabel5.setBounds(currentX,currentY - movepixel,50,50);
+            if (!intersects(jLabel5)){
+                jLabel2.setBounds(currentX ,currentY - movepixel,50,50);
+            }
         }
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-             if((jLabel2.getX()>144 ||jLabel2.getX()+jLabel2.getWidth()<0)|| jLabel2.getY()+50>55){
-             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
+//             if((jLabel2.getX()>144 ||jLabel2.getX()+jLabel2.getWidth()<0)|| jLabel2.getY()+50>55){
+//             jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + movepixel, 50, 50);
+//            }
+            jLabel5.setBounds(currentX,currentY + movepixel,50,50);
+            if (!intersects(jLabel5)){
+                jLabel2.setBounds(currentX ,currentY + movepixel,50,50);
             }
-            
 
         }
         if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
-            jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
-
+//            jLabel2.setBounds(jLabel2.getBounds().x - movepixel, jLabel2.getBounds().y, 50, 50);
+            jLabel5.setBounds(currentX - movepixel,currentY,50,50);
+            if (!intersects(jLabel5)){
+                jLabel2.setBounds(currentX - movepixel,currentY,50,50);
+            }
         }
         if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-            jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
+//            jLabel2.setBounds(jLabel2.getBounds().x + movepixel, jLabel2.getBounds().y, 50, 50);
+            jLabel5.setBounds(currentX + movepixel,currentY,50,50);
+            if (!intersects(jLabel5)){
+                jLabel2.setBounds(currentX + movepixel,currentY,50,50);
+            }
 
         }
-        if ((jLabel2.getBounds().y <= -5)) {
-            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y + 10, 50, 50);
-        } else if ((jLabel2.getBounds().y >= 460)) {
-            jLabel2.setBounds(jLabel2.getBounds().x, jLabel2.getBounds().y - 10, 50, 50);
-        } else if ((jLabel2.getBounds().x <= -1)) {
-            jLabel2.setBounds(jLabel2.getBounds().x + 10, jLabel2.getBounds().y, 50, 50);
-        } else if ((jLabel2.getBounds().x >= 465)) {
-            jLabel2.setBounds(jLabel2.getBounds().x - 10, jLabel2.getBounds().y, 50, 50);
+        
+        if ((currentY <= -5)) {
+            jLabel2.setBounds(currentX, currentY + movepixel, 50, 50);
+        } else if ((currentY >= 460)) {
+            jLabel2.setBounds(currentX, currentY - movepixel, 50, 50);
+        } else if ((currentX <= -1)) {
+            jLabel2.setBounds(currentX + movepixel, currentY, 50, 50);
+        } else if ((currentX >= 465)) {
+            jLabel2.setBounds(currentX - movepixel, currentY, 50, 50);
         }
     }//GEN-LAST:event_jButton1KeyPressed
+    public static boolean intersects(JLabel testa){
+        Area areaA = new Area(testa.getBounds());
+        boolean intersect = false;
+        for(int i = 0;i < wall.length;i++){
+            Area areaB = new Area(wall[i].getBounds());
+            intersect = areaA.intersects(areaB.getBounds2D());
+            if(intersect == true){
+                return intersect;
+            }
+        }
+        return intersect;
 
+//        return areaA.intersects(areaB.getBounds2D());
+    }
     /**
      * @param args the command line arguments
      */
@@ -182,7 +287,34 @@ public class game2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

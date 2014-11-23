@@ -22,6 +22,7 @@ public class game1 extends javax.swing.JFrame {
      */
     public game1() {
         initComponents();
+        
 
     }
 
