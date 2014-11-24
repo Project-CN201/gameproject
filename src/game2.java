@@ -60,7 +60,6 @@ public class game2 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -75,6 +74,7 @@ public class game2 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -116,14 +116,6 @@ public class game2 extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 230, 10));
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, -1));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 60, 10));
-
-        jButton1.setText("jButton1");
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 100, -1));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 20, 110));
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 80, 20));
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 20, 90));
@@ -141,6 +133,18 @@ public class game2 extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pix/bg2.jpg"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 100, 30));
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 20, 60));
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 10, 150));
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 90, -1));
@@ -234,6 +238,10 @@ public class game2 extends javax.swing.JFrame {
             jLabel2.setBounds(currentX - movepixel, currentY, 50, 50);
         }
     }//GEN-LAST:event_jButton1KeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
     public static boolean intersects(JLabel testa){
         Area areaA = new Area(testa.getBounds());
         boolean intersect = false;
